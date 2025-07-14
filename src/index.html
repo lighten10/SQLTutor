@@ -22,7 +22,7 @@
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <div class="text-2xl font-bold text-[#05CE78]">SQL Tutor</div>
       <div class="space-x-4 text-sm font-medium">
-        <a href="#" class="text-white hover:text-[#05CE78]">Home</a>
+        <a href="../index.html" class="text-white hover:text-[#05CE78]">Home</a>
         <a href="#" class="text-white hover:text-[#05CE78]">Learn</a>
         <a href="#" class="text-white hover:text-[#05CE78]">SQL Playground</a>
       </div>
@@ -75,7 +75,12 @@
           <button onclick="visualizeQuery()" class="bg-[#05CE78] text-[#05192D] px-3 py-1 rounded font-semibold hover:bg-[#04ba6b]">Visualize</button>
         </div>
         <div id="plan" class="text-sm font-mono text-white whitespace-pre-wrap bg-[#05192D] border border-[#1B2F43] rounded p-2 mb-2"></div>
-        <div id="planTree" class="text-sm text-white"></div>
+        <!-- Inside the Visualize section -->
+      <div id="planTreeWrapper" class="border border-[#1B2F43] rounded bg-[#05192D] overflow-auto max-h-[500px] p-2">
+  <svg id="planTree" class="text-sm text-white w-full h-full"></svg>
+</div>
+
+
       </section>
 
     </div>
@@ -87,5 +92,31 @@
   </footer>
 
   <script type="module" src="../public/js/main.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <style>
+  #planTreeWrapper {
+    max-width: 100%;
+  }
+
+  #planTree {
+    overflow: visible;
+  }
+
+  svg text {
+    font-size: 12px;
+    fill: white;
+  }
+
+  .node circle {
+    fill: #05CE78;
+  }
+
+  .link {
+    stroke: #ccc;
+    stroke-width: 1.5px;
+  }
+</style>
+
 </body>
 </html>
