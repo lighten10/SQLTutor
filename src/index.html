@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SQL Tutor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #05192D;
+    }
+    textarea, pre, code {
+      font-family: 'Source Code Pro', monospace;
+    }
+  </style>
+</head>
+<body class="text-white">
+
+  <!-- ✅ Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-[#05192D] border-b border-[#0D2438] z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-[#05CE78]">SQL Tutor</div>
+      <div class="space-x-4 text-sm font-medium">
+        <a href="#" class="text-white hover:text-[#05CE78]">Home</a>
+        <a href="#" class="text-white hover:text-[#05CE78]">Learn</a>
+        <a href="#" class="text-white hover:text-[#05CE78]">SQL Playground</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Padding under navbar -->
+  <div class="pt-20"></div>
+
+  <!-- ✅ Split Layout -->
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- 🧠 LEFT: SQL Code Editor -->
+    <div class="md:col-span-2 space-y-6">
+
+      <!-- SQL Editor -->
+      <section class="bg-[#0D2438] rounded-lg p-4 shadow-md">
+        <h2 class="text-lg font-semibold mb-3 text-white">📝 SQL Query</h2>
+        <textarea id="sql" rows="12" class="w-full bg-transparent border border-[#1B2F43] rounded text-sm text-white p-3 focus:outline-none placeholder-gray-400">SELECT * FROM uploaded_data LIMIT 5;</textarea>
+        <button onclick="runQuery()" class="mt-4 bg-[#05CE78] text-[#05192D] font-semibold px-5 py-2 rounded hover:bg-[#04ba6b]">
+          ▶️ Run Query
+        </button>
+      </section>
+
+      <!-- Query Result -->
+      <section class="bg-[#0D2438] rounded-lg p-4 shadow-md">
+        <h2 class="text-lg font-bold mb-3">📊 Query Result</h2>
+        <div id="result" class="overflow-x-auto text-sm text-black font-mono whitespace-pre"></div>
+      </section>
+
+    </div>
+
+    <!-- 📤 RIGHT: Upload + Tables + Visualize -->
+    <div class="space-y-6">
+
+      <!-- Upload -->
+      <section class="bg-[#0D2438] rounded-lg p-4 shadow-md">
+        <h2 class="text-lg font-semibold mb-3">📂 Upload CSV</h2>
+        <input type="file" id="csvInput" class="mb-3 bg-[#05192D] border border-[#1B2F43] text-white rounded px-2 py-1 w-full" />
+        <button onclick="uploadCSV()" class="w-full bg-[#05CE78] text-[#05192D] font-semibold px-4 py-2 rounded hover:bg-[#04ba6b]">⬆️ Upload</button>
+
+        <h3 class="mt-4 text-white font-semibold">📋 Loaded Tables</h3>
+        <div id="tables" class="text-sm font-mono text-white bg-[#05192D] mt-2 border border-[#1B2F43] rounded p-2 max-h-40 overflow-auto"></div>
+      </section>
+
+      <!-- Visualize -->
+      <section class="bg-[#0D2438] rounded-lg p-4 shadow-md">
+        <div class="flex justify-between items-center mb-3">
+          <h2 class="text-lg font-semibold">🧠 Query Plan</h2>
+          <button onclick="visualizeQuery()" class="bg-[#05CE78] text-[#05192D] px-3 py-1 rounded font-semibold hover:bg-[#04ba6b]">Visualize</button>
+        </div>
+        <div id="plan" class="text-sm font-mono text-white whitespace-pre-wrap bg-[#05192D] border border-[#1B2F43] rounded p-2 mb-2"></div>
+        <div id="planTree" class="text-sm text-white"></div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ✅ Footer -->
+  <footer class="text-center text-gray-400 text-sm mt-12 py-6 border-t border-[#0D2438]">
+    Made with ❤️ using DuckDB & TailwindCSS — Inspired by SQLTutor and DataCamp
+  </footer>
+
+  <script type="module" src="../public/js/main.js"></script>
+</body>
+</html>

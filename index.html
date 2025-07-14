@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SQLTutor – Learn SQL with Ease</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen bg-[#f7f9fa] text-[#1b1e2c]">
+
+  <!-- ✅ Fixed Navbar -->
+  <nav class="bg-[#1b1e2c] text-white fixed top-0 left-0 right-0 z-50 shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="text-2xl font-bold text-green-400">SQLTutor</div>
+      <div class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="/" class="hover:text-green-400 transition">Home</a>
+        <a href="#" class="hover:text-green-400 transition">Learn</a>
+        <a href="#" class="hover:text-green-400 transition">Exam</a>
+        <a href="#" class="hover:text-green-400 transition">Assignments</a>
+        <a href="#" class="hover:text-green-400 transition">Score</a>
+        <a href="#" class="hover:text-green-400 transition">Leaderboard</a>
+        <a href="/src/index.html" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md shadow-sm">SQL Tutor</a>
+      </div>
+      <div class="hidden md:flex space-x-3">
+        <a href="/login.html" class="border border-white text-white hover:bg-white hover:text-[#1b1e2c] px-3 py-1 rounded-md text-sm font-medium transition">Log In</a>
+        <a href="/signup.html" class="bg-green-500 hover:bg-green-600 px-3 py-1 text-sm font-medium text-white rounded-md shadow">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Spacer below navbar -->
+  <div class="pt-24"></div>
+
+  <!-- ✅ Main Content -->
+  <main class="flex-grow">
+    <section class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-10">
+      <!-- Left: Text -->
+      <div class="md:w-1/2 space-y-6">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-[#1b1e2c] leading-tight">
+          Learn SQL, Ace Interviews,<br />Build Real Skills
+        </h1>
+        <p class="text-lg text-gray-600">
+          Master SQL through interactive query playgrounds, mock exams, and real-world challenges — all in one platform designed for learners like you.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/signup.html" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-md shadow text-sm">
+            Get Started For Free
+          </a>
+          <a href="/public/index.html" class="border border-[#1b1e2c] text-[#1b1e2c] hover:bg-[#1b1e2c] hover:text-white px-6 py-3 rounded-md shadow text-sm font-semibold">
+            Try SQL Tutor →
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Illustration (Optional) -->
+      <div class="md:w-1/2">
+        <img src="https://www.datacamp.com/assets/logos/datacamp-illustration-dark-1.svg" alt="Learning Graphic" class="w-full max-w-md mx-auto" />
+      </div>
+    </section>
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer class="text-center text-sm text-gray-500 py-6">
+    © 2025 SQLTutor by Rahul Joshi. All rights reserved.
+  </footer>
+
+</body>
+</html>
